@@ -1,47 +1,45 @@
-
-//Object destructuring
+//
+// Object destructuring
+//
 
 // const person = {
-//     age: 26,
-//     location: {
-//         city: 'D.C',
-//         temp: 36
-//     }
-// }
-
-// const {name: firstName = 'Anoymous',age} = person
-
-// console.log(`${firstName} is ${age}.`);
-
-// const {city , temp: temperature } = person.location
-// if (city && temperature){
-//     console.log(`It's ${temperature} in ${city}`);
-// }
-
-
-// const book = {
-//     title: "Ego is the Enemy",
-//     author: "Ryan Holiday",
-//     publisher: {
-//         name: "Penguin"
-//     }
+//   name: 'Andrew',
+//   age: 27,
+//   location: {
+//     city: 'Philadelphia',
+//     temp: 88
+//   }
 // };
 
-// const {name: publisherName = 'Self-Published'}  = book.publisher
+// const { name: firstName = 'Anonymous', age } = person;
+// console.log(`${firstName} is ${age}.`);
 
-// console.log(publisherName);
+// const { city, temp: temperature } = person.location;
+// if (city && temperature) {
+//   console.log(`It's ${temperature} in ${city}.`);
+// }
 
+// const book = {
+//   title: 'Ego is the Enemy',
+//   author: 'Ryan Holiday',
+//   publisher: {
+//     // name: 'Penguin'
+//   }
+// };
 
-//Array destructuring
+// const { name: publisherName = 'Self-Published' } = book.publisher;
 
-// const address = ['2750 Gallows Rd', 'Vienna', 'VA', '22180'];
+// console.log(publisherName); // Penguin, Self-Published
 
-// const [  ,city , state ] = address;
+//
+// Array destructuring
+//
 
-// console.log(`you are in ${city} ${state}.`)
+// const address = ['1299 S Juniper Street', 'Philadelphia', 'Pennsylvania', '19147'];
+// const [, city, state = 'New York'] = address;
+// console.log(`You are in ${city} ${state}.`);
 
-const item = ['Coffee (hot)', '$2.00', '$2.50', '$2.75'];
+const item = ['Coffee (iced)', '$3.00', '$3.50', '$3.75'];
+const [itemName, , mediumPrice] = item;
 
-const [ coffee, , medium ] = item;
-
-console.log(`A medium ${coffee} costs ${medium}`);
+console.log(`A medium ${itemName} costs ${mediumPrice}`);
